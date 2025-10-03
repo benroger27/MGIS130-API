@@ -43,7 +43,7 @@ body {
 header {
     text-align: center;
     margin-bottom: 3rem;
-    padding: 2rem 0;
+    padding: 2.5rem 2rem;
     background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
     border-radius: 20px;
     color: var(--white);
@@ -52,19 +52,17 @@ header {
     overflow: hidden;
 }
 
-/* Logo Placement - Add your logo as background */
-header::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 150px;
-    height: 150px;
-    background-image: url('logo.png'); /* Place your logo.png in the same folder */
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.2;
-    transform: rotate(15deg);
+/* Logo Styling */
+.header-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
 }
 
 header h1 {
@@ -386,6 +384,10 @@ header h1 {
         font-size: 2rem;
     }
     
+    .header-logo {
+        width: 80px;
+    }
+    
     .controls {
         flex-direction: column;
         align-items: stretch;
@@ -413,6 +415,10 @@ header h1 {
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.5rem;
+    }
+    
+    .header-logo {
+        width: 70px;
     }
     
     .subtitle {
@@ -448,5 +454,9 @@ header h1 {
     
     .content-card {
         break-inside: avoid;
+    }
+    
+    .header-logo {
+        width: 60px;
     }
 }
